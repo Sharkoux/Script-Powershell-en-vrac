@@ -6,7 +6,7 @@ $crypt = read-host "Quel est la crypto dont vous recherchez la valeur? "
 
 $fiat = Read-Host "En quel monnaie fiat souhaitez vous voir cette valeur? "
 
-Invoke-RestMethod "https://api.blockchain.com/v3/exchange/tickers/$crypt-$fiat" -Method Get  -OutFile "D:\Bureau\test2.txt"
+Invoke-RestMethod -Uri "https://api.binance.com/api/v3/ticker/price?symbol=$crypt$fiat" -Method get  -OutFile "D:\Bureau\test2.txt"
 
 $contenu = Get-Content -Path D:\Bureau\test2.txt
 
